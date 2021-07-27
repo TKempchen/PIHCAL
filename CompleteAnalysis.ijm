@@ -1,6 +1,5 @@
 //define variables for the dialog box 
 
-title = "PIHCAL viability assay";
 fontSize = 60;
 Well = "";
 Input  = "Must end with /"
@@ -10,7 +9,6 @@ Output = "Filepath of output"
 
 Dialog.create("PIHCAL viability assay"); //Creates dialog box
 Dialog.addMessage("Please Provide the Following Information"); //Adds message text
-Dialog.addString("Title:", title, 15); //Input for title, which later becomes file name
 Dialog.addString("Well:", Well, 15);
 Dialog.addString("Input:", Input, 15);
 Dialog.addString("Output:", Output, 15);
@@ -18,7 +16,6 @@ Dialog.show(); //This opens the dialog box we created
 
 //Below gathers user input from above dialog box and reassigns the relevant variables such that they now carry those values
 
-title = Dialog.getString();
 Well = Dialog.getString();
 Input = Dialog.getString();
 Output = Dialog.getString();
@@ -87,6 +84,9 @@ close();
 close();
 selectWindow("Calcein-ForMask.tif");
 close();
+roiManager("Delete");
+roiManager("Deselect");
+roiManager("Delete");
 
 Table.rename("Results", "Results-PIHCAL-"+Well);
-saveAs("Results", Output+"/Results-PIHCAL-A1.csv");
+saveAs("Results", Output+"/Results-PIHCAL-"+Well+".csv");
