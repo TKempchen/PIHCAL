@@ -1,3 +1,8 @@
+//This macro was written by Tim Kempchen, 
+//feel free to change and improve it but remember to reference me :)
+
+
+
 //define variables for the dialog box 
 
 fontSize = 60;
